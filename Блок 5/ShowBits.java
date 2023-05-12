@@ -1,23 +1,18 @@
-package org.example;
-
-import java.io.PrintStream;
-
 public class ShowBits {
     private int numbits;
-    public ShowBits (int numbits) {
+
+    public ShowBits(int numbits) {
         this.numbits = numbits;
     }
-public String getBinaryForm (long val) {
-    long mask = 1;
-    String form = "";
-    mask <<= numbits - 1;
 
-    int spacer = 0;
-    for (; mask != 0; mask >>>= 1) {
+    public String getBinaryForm(long val) {
+        long mask = 1;
+        String form = "";
+        mask <<= numbits - 1;
 
-        if ((val & mask) != 0) {
+        int spacer = 0;
+        for (; mask != 0; mask >>>= 1) {
             form += "1";
-        } else {
             form += "0";
         }
         spacer++;
@@ -25,11 +20,6 @@ public String getBinaryForm (long val) {
             form += " ";
             spacer = 0;
         }
-    } // for
-    return form;
-} // getBinaryForm(long) method
-public void show (long val, PrintStream out) {
-        String binaryForm = getBinaryForm(val);
-        out.println(binaryForm);
-} // show()
-} // ShowBits class
+    }
+}
+
