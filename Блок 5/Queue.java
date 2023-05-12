@@ -1,5 +1,4 @@
-package com.example.demo4;
-
+package com.example
 public class Queue {
     private char q[];
     private int putloc;
